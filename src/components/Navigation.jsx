@@ -26,7 +26,7 @@ const Navigation = () => {
     <>
       {/* Top Bar */}
       <motion.div 
-        className="bg-slate-900 dark:bg-slate-950 text-white py-2 px-4 md:px-6"
+        className="bg-[#004fa3] text-white py-2 px-4 md:px-6"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -67,9 +67,7 @@ const Navigation = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/" className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-slate-800 to-slate-600 dark:from-slate-700 dark:to-slate-500 rounded-xl flex items-center justify-center text-white font-bold text-lg">
-                  A
-                </div>
+                <img src="/logo2.svg" alt="Abigeo Agency Logo" className="w-20 h-20 object-contain" />
                 <div>
                   <div className="font-bold text-slate-800 dark:text-slate-100 text-lg leading-tight">
                     Abigeo Agency
@@ -128,7 +126,7 @@ const Navigation = () => {
               >
                 <Link
                   to="/contact"
-                  className="bg-slate-800 dark:bg-slate-700 text-white px-6 py-2 rounded-lg font-medium hover:bg-slate-700 dark:hover:bg-slate-600 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="bg-[#004fa3] text-white px-6 py-2 rounded-lg font-medium hover:bg-lime-600 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   Get Quote
                 </Link>
@@ -195,7 +193,7 @@ const Navigation = () => {
                 >
                   <Link
                     to="/contact"
-                    className="block w-full bg-slate-800 dark:bg-slate-700 text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
+                    className="block w-full bg-[#a7cf3a] text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-lime-600 transition-colors"
                   >
                     Get Quote
                   </Link>

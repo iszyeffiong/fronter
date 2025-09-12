@@ -64,7 +64,7 @@ const Home = () => {
       className="overflow-hidden"
     >
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-white py-20 md:py-32 overflow-hidden">
+  <section className="relative bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1678182451047-196f22a4143e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
@@ -95,7 +95,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Global Logistics
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#004fa3] to-cyan-400">
                 Excellence
               </span>
               Since 2011
@@ -119,7 +119,7 @@ const Home = () => {
               <Button
                 asChild
                 size="lg" 
-                className="bg-white text-slate-900 hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
+                className="bg-white text-[#004fa3] hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
               >
                 <Link to="/contact">
                   Get Quote Now
@@ -130,7 +130,7 @@ const Home = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
+                className="border-white text-white hover:bg-white hover:text-[#004fa3] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
               >
                 <Link to="/services">
                   Our Services
@@ -142,7 +142,7 @@ const Home = () => {
 
         {/* Floating Elements */}
         <motion.div
-          className="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full"
+          className="absolute top-20 left-10 w-20 h-20 flex items-center justify-center"
           animate={{
             y: [0, -20, 0],
             rotate: [0, 180, 360]
@@ -152,9 +152,11 @@ const Home = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-        />
+        >
+          <Plane className="w-16 h-16 text-white/70 drop-shadow-lg" />
+        </motion.div>
         <motion.div
-          className="absolute bottom-20 right-10 w-16 h-16 bg-blue-400/20 rounded-full"
+          className="absolute bottom-20 right-10 w-20 h-20 flex items-center justify-center"
           animate={{
             y: [0, 20, 0],
             x: [0, -10, 0]
@@ -164,13 +166,15 @@ const Home = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-        />
+        >
+          <Ship className="w-16 h-16 text-[#004fa3] drop-shadow-lg" />
+        </motion.div>
       </section>
 
       {/* Stats Section */}
       <motion.section
         variants={itemVariants}
-        className="py-16 bg-white dark:bg-slate-900"
+  className="py-16 bg-white dark:bg-[#004fa3]"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -189,7 +193,7 @@ const Home = () => {
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-600 rounded-2xl flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
                     <IconComponent className="w-8 h-8 text-slate-700 dark:text-slate-200" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-[#004fa3] dark:text-slate-100 mb-2">
                     {stat.number}
                   </div>
                   <div className="text-slate-600 dark:text-slate-300 font-medium">
@@ -205,7 +209,7 @@ const Home = () => {
       {/* Services Section */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800"
+  className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
@@ -215,7 +219,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#004fa3] dark:text-slate-100 mb-6">
               Comprehensive Logistics Solutions
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
@@ -234,7 +238,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-slate-800 overflow-hidden">
+                  <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden">
                     <div className="relative h-48 overflow-hidden">
                       <img 
                         src={service.image}
@@ -249,7 +253,7 @@ const Home = () => {
                       </div>
                     </div>
                     <CardHeader className="space-y-4">
-                      <CardTitle className="text-xl text-slate-900 dark:text-slate-100 group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors">
+                      <CardTitle className="text-xl text-[#004fa3] dark:text-slate-100 group-hover:text-[#004fa3] dark:group-hover:text-slate-200 transition-colors">
                         {service.title}
                       </CardTitle>
                     </CardHeader>
@@ -279,7 +283,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <Button asChild size="lg" className="bg-slate-800 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <Button asChild size="lg" className="bg-[#004fa3] hover:bg-[#003366] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <Link to="/services">
                 View All Services
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -292,7 +296,7 @@ const Home = () => {
       {/* Featured Projects */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-white dark:bg-slate-900"
+  className="py-20 bg-white dark:bg-[#004fa3]"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
@@ -302,7 +306,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#004fa3] dark:text-slate-100 mb-6">
               Recent Project Successes
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
@@ -319,7 +323,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-slate-800 overflow-hidden">
+                <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden">
                   <div className="relative h-40 overflow-hidden">
                     <img 
                       src={project.image}
@@ -337,10 +341,10 @@ const Home = () => {
                     </div>
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-lg text-slate-900 dark:text-slate-100">
+                    <CardTitle className="text-lg text-[#004fa3] dark:text-slate-100">
                       {project.client}
                     </CardTitle>
-                    <Badge className="w-fit bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700">
+                    <Badge className="w-fit bg-[#e6f0fa] dark:bg-[#003366]/30 text-[#004fa3] dark:text-[#7cc4fa] border-[#b3d1f2] dark:border-[#004fa3]">
                       {project.category}
                     </Badge>
                   </CardHeader>
@@ -394,7 +398,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#004fa3] mb-6">
               What Our Clients Say
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -423,7 +427,7 @@ const Home = () => {
                       "{testimonial.quote}"
                     </p>
                     <div className="border-t pt-4">
-                      <p className="font-semibold text-slate-900">
+                      <p className="font-semibold text-[#004fa3]">
                         {testimonial.name}
                       </p>
                       <p className="text-sm text-slate-500">
@@ -441,7 +445,7 @@ const Home = () => {
       {/* CTA Section */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white"
+  className="py-20 bg-gradient-to-br from-[#004fa3] via-[#004fa3] text-white  "
       >
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <motion.div
@@ -450,7 +454,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 ">
               Ready to Ship Your Cargo?
             </h2>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">

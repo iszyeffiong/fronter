@@ -21,11 +21,11 @@ const Footer = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 } 
   };
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-[#004fa3] text-white">
       <motion.div
         className="max-w-7xl mx-auto px-4 md:px-6 py-16"
         variants={containerVariants}

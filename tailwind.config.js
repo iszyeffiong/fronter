@@ -3,7 +3,7 @@ module.exports = {
     darkMode: ["class"],
     content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
+    "index.html"
   ],
   theme: {
   	extend: {
@@ -13,6 +13,13 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+  			'brand-blue': {
+  			  DEFAULT: '#004fa3',
+  			  50: '#e6f0fa',
+  			  100: '#b3d1f2',
+  			  200: '#7cc4fa',
+  			  900: '#003366',
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

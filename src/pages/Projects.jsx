@@ -143,7 +143,7 @@ const Projects = () => {
                         {project.client}
                       </CardTitle>
                       
-                      <Badge className="w-fit bg-blue-50 text-blue-700 border-blue-200">
+                      <Badge className="w-fit bg-[#e6f0fa] text-[#004fa3] border-[#b3d1f2]">
                         {project.category}
                       </Badge>
                     </CardHeader>

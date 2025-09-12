@@ -94,7 +94,7 @@ export const services = [
       "Door-to-door delivery"
     ],
     icon: "Plane",
-    image: "https://images.pexels.com/photos/33823181/pexels-photo-33823181.jpeg"
+  image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 3,
