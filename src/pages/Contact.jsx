@@ -84,7 +84,7 @@ const Contact = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -104,7 +104,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
+  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Form */}
@@ -135,7 +135,7 @@ const Contact = () => {
                             onChange={(e) => handleInputChange("name", e.target.value)}
                             placeholder="Your full name"
                             required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-slate-300"
+                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
                           />
                         </div>
                         <div className="space-y-2">
@@ -147,7 +147,7 @@ const Contact = () => {
                             onChange={(e) => handleInputChange("email", e.target.value)}
                             placeholder="your.email@company.com"
                             required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-slate-300"
+                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
                           />
                         </div>
                       </div>
@@ -161,7 +161,7 @@ const Contact = () => {
                             onChange={(e) => handleInputChange("phone", e.target.value)}
                             placeholder="+234 (0) 800 000 0000"
                             required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-slate-300"
+                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
                           />
                         </div>
                         <div className="space-y-2">
@@ -171,7 +171,7 @@ const Contact = () => {
                             value={formData.company}
                             onChange={(e) => handleInputChange("company", e.target.value)}
                             placeholder="Your company name"
-                            className="transition-all duration-200 focus:ring-2 focus:ring-slate-300"
+                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
                           />
                         </div>
                       </div>
@@ -216,7 +216,7 @@ const Contact = () => {
                           placeholder="Please provide details about your cargo, origins, destinations, timeline, and any special requirements..."
                           rows={6}
                           required
-                          className="transition-all duration-200 focus:ring-2 focus:ring-slate-300"
+                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
                         />
                       </div>
 
@@ -224,7 +224,7 @@ const Contact = () => {
                         type="submit"
                         size="lg"
                         disabled={isSubmitting}
-                        className="w-full bg-slate-800 hover:bg-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                        className="w-full bg-[#004fa3] hover:bg-[#003570] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                       >
                         {isSubmitting ? (
                           <>
@@ -254,7 +254,7 @@ const Contact = () => {
               >
                 <Card className="bg-white border-0 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-xl text-slate-900">
+                    <CardTitle className="text-xl text-[#004fa3]">
                       Quick Response Guarantee
                     </CardTitle>
                   </CardHeader>
@@ -291,11 +291,11 @@ const Contact = () => {
                   <Card className="bg-white border-0 shadow-lg">
                     <CardHeader>
                       <div className="flex items-center space-x-2">
-                        <Badge variant="secondary" className="bg-slate-100 text-slate-700">
+                        <Badge variant="secondary" className="bg-[#e6f0fa] text-[#004fa3]">
                           {office.type}
                         </Badge>
                       </div>
-                      <CardTitle className="text-xl text-slate-900">
+                      <CardTitle className="text-xl text-[#004fa3]">
                         {office.city}
                       </CardTitle>
                     </CardHeader>
@@ -338,7 +338,7 @@ const Contact = () => {
               >
                 <Card className="bg-white border-0 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-xl text-slate-900 flex items-center">
+                    <CardTitle className="text-xl text-[#004fa3] flex items-center">
                       <Clock className="w-5 h-5 mr-2" />
                       Business Hours
                     </CardTitle>
@@ -346,15 +346,15 @@ const Contact = () => {
                   <CardContent className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600">Monday - Friday</span>
-                      <span className="text-slate-900 font-medium">8:00 AM - 6:00 PM</span>
+                      <span className="text-[#004fa3] font-medium">8:00 AM - 6:00 PM</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600">Saturday</span>
-                      <span className="text-slate-900 font-medium">9:00 AM - 4:00 PM</span>
+                      <span className="text-[#004fa3] font-medium">9:00 AM - 4:00 PM</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-slate-600">Sunday</span>
-                      <span className="text-slate-900 font-medium">Closed</span>
+                      <span className="text-[#004fa3] font-medium">Closed</span>
                     </div>
                     <div className="pt-2 border-t">
                       <p className="text-xs text-slate-500">

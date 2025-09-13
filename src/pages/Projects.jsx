@@ -48,7 +48,7 @@ const Projects = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -57,7 +57,7 @@ const Projects = () => {
             <Badge className="mb-6 bg-white/10 text-white border-white/20">
               15+ Major Projects Completed
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 dark:text-white">
               Our Project Portfolio
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
@@ -109,7 +109,7 @@ const Projects = () => {
       </motion.section>
 
       {/* Projects Grid */}
-      <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
+  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <AnimatePresence mode="wait">
             <motion.div
@@ -131,15 +131,15 @@ const Projects = () => {
                   <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white">
                     <CardHeader>
                       <div className="flex justify-between items-start mb-4">
-                        <Badge variant="secondary" className="bg-slate-100 text-slate-700">
+                        <Badge variant="secondary" className="bg-[#e6f0fa] text-[#004fa3]">
                           {project.year}
                         </Badge>
-                        <Badge variant="outline" className="border-slate-300">
+                        <Badge variant="outline" className="border-[#b3d1f2]">
                           {project.mode}
                         </Badge>
                       </div>
                       
-                      <CardTitle className="text-lg text-slate-900 line-clamp-2">
+                      <CardTitle className="text-lg text-[#004fa3] line-clamp-2 dark:text-white">
                         {project.client}
                       </CardTitle>
                       
@@ -149,7 +149,7 @@ const Projects = () => {
                     </CardHeader>
                     
                     <CardContent className="space-y-4">
-                      <CardDescription className="text-slate-600 font-medium">
+                      <CardDescription className="text-slate-600 font-medium dark:text-white">
                         {project.description}
                       </CardDescription>
                       
@@ -211,7 +211,7 @@ const Projects = () => {
       </motion.section>
 
       {/* Project Stats */}
-      <motion.section variants={itemVariants} className="py-20 bg-white">
+  <motion.section variants={itemVariants} className="py-20 bg-white dark:bg-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="text-center mb-16"
@@ -220,7 +220,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004fa3] mb-6 dark:text-white">
               Project Statistics
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -260,13 +260,13 @@ const Projects = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-slate-800 to-slate-600 rounded-2xl flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
+                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-[#004fa3] to-[#004fa3] dark:bg-[#004fa3] rounded-2xl flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
                   <span className="text-2xl font-bold text-white">{stat.number}</span>
                 </div>
-                <div className="text-xl font-bold text-slate-900 mb-2">
+                <div className="text-xl font-bold text-[#004fa3] mb-2 dark:text-white">
                   {stat.label}
                 </div>
-                <div className="text-slate-600 text-sm">
+                <div className="text-slate-600 text-sm dark:text-white">
                   {stat.description}
                 </div>
               </motion.div>
@@ -278,7 +278,7 @@ const Projects = () => {
       {/* CTA Section */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white"
+        className="py-20 bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white"
       >
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <motion.div
@@ -287,10 +287,10 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
               Start Your Next Project
             </h2>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed dark:text-white">
               Join our growing list of satisfied clients. Let us handle your logistics needs with the same expertise and dedication.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

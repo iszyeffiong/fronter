@@ -38,7 +38,7 @@ const About = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] text-white py-20">
+  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -47,7 +47,7 @@ const About = () => {
             <Badge className="mb-6 bg-white/10 text-white border-white/20">
               {companyInfo.experience} Years of Excellence
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 dark:text-white">
               About Abigeo Agency
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
@@ -100,19 +100,19 @@ const About = () => {
               </Card>
               <Card className="text-center bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-slate-900 mb-2">15+</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">15+</div>
                   <div className="text-slate-600">Major Projects</div>
                 </CardContent>
               </Card>
               <Card className="text-center bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-slate-900 mb-2">2</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">2</div>
                   <div className="text-slate-600">Office Locations</div>
                 </CardContent>
               </Card>
               <Card className="text-center bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-slate-900 mb-2">100%</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">100%</div>
                   <div className="text-slate-600">Client Satisfaction</div>
                 </CardContent>
               </Card>
@@ -122,7 +122,7 @@ const About = () => {
       </motion.section>
 
       {/* Vision & Mission */}
-      <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
+  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="text-center mb-16"
@@ -183,7 +183,7 @@ const About = () => {
       </motion.section>
 
       {/* Core Values */}
-      <motion.section variants={itemVariants} className="py-20 bg-white">
+  <motion.section variants={itemVariants} className="py-20 bg-white dark:bg-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="text-center mb-16"
@@ -192,7 +192,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004fa3] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004fa3] mb-6 dark:text-white">
               Our Core Values
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">

@@ -115,7 +115,7 @@ const Navigation = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7 }}
               >
-                <ThemeToggle />
+          {/* <ThemeToggle /> */}
               </motion.div>
               
               {/* Get Quote Button */}

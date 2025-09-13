@@ -42,7 +42,7 @@ const Services = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -51,7 +51,7 @@ const Services = () => {
             <Badge className="mb-6 bg-white/10 text-white border-white/20">
               Comprehensive Logistics Solutions
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 dark:text-white">
               Our Services
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
@@ -62,7 +62,7 @@ const Services = () => {
       </section>
 
       {/* Services Overview */}
-      <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
+  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
@@ -78,30 +78,30 @@ const Services = () => {
                   <Card 
                     className={`h-full group cursor-pointer transition-all duration-300 border-0 shadow-lg ${
                       selectedService.id === service.id 
-                        ? 'ring-2 ring-slate-800 shadow-xl -translate-y-2' 
-                        : 'hover:shadow-xl hover:-translate-y-2'
+                        ? 'ring-2 ring-[#004fa3] shadow-xl -translate-y-2 dark:bg-[#004fa3]' 
+                        : 'hover:shadow-xl hover:-translate-y-2 dark:bg-[#004fa3]'
                     }`}
                     onClick={() => setSelectedService(service)}
                   >
                     <CardHeader className="space-y-4">
                       <div className={`w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 ${
                         selectedService.id === service.id
-                          ? 'bg-slate-800 scale-110'
-                          : 'bg-gradient-to-br from-slate-800 to-slate-600 group-hover:scale-110'
+                          ? 'bg-[#004fa3] scale-110 dark:bg-[#004fa3]'
+                          : 'bg-gradient-to-br from-[#004fa3] to-[#004fa3] group-hover:scale-110 dark:bg-[#004fa3]'
                       }`}>
                         <IconComponent className="w-7 h-7 text-white" />
                       </div>
-                      <CardTitle className="text-xl text-slate-900 group-hover:text-slate-800 transition-colors">
+                      <CardTitle className="text-xl text-[#004fa3] group-hover:text-[#004fa3] transition-colors dark:text-white">
                         {service.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-slate-600 mb-4 leading-relaxed">
+                      <CardDescription className="text-slate-600 mb-4 leading-relaxed dark:text-white">
                         {service.description}
                       </CardDescription>
                       <ul className="space-y-2">
                         {service.features.slice(0, 2).map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-slate-600">
+                          <li key={idx} className="flex items-center text-sm text-slate-600 dark:text-white">
                             <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                             {feature}
                           </li>
@@ -129,20 +129,20 @@ const Services = () => {
               className="max-w-4xl mx-auto"
             >
               <div className="text-center mb-12">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-slate-800 to-slate-600 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#004fa3] to-[#004fa3] rounded-2xl flex items-center justify-center mb-6">
                   {React.createElement(iconMap[selectedService.icon], { className: "w-10 h-10 text-white" })}
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#004fa3] mb-4 dark:text-white">
                   {selectedService.title}
                 </h2>
-                <p className="text-xl text-slate-600 leading-relaxed">
+                <p className="text-xl text-slate-600 leading-relaxed dark:text-white">
                   {selectedService.description}
                 </p>
               </div>
 
               <Card className="bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Service Features</h3>
+                  <h3 className="text-2xl font-bold text-[#004fa3] mb-6 dark:text-white">Service Features</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {selectedService.features.map((feature, index) => (
                       <motion.div
@@ -153,7 +153,7 @@ const Services = () => {
                         className="flex items-center space-x-3"
                       >
                         <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                        <span className="text-slate-700 font-medium">{feature}</span>
+                        <span className="text-slate-700 font-medium dark:text-white">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -165,7 +165,7 @@ const Services = () => {
       </motion.section>
 
       {/* Service Categories */}
-      <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
+  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="text-center mb-16"
@@ -222,19 +222,19 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white">
+                <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3]">
                   <CardHeader>
-                    <CardTitle className="text-xl text-slate-900 group-hover:text-slate-800 transition-colors">
+                    <CardTitle className="text-xl text-[#004fa3] group-hover:text-[#004fa3] transition-colors dark:text-white">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="text-slate-600">
+                    <CardDescription className="text-slate-600 dark:text-white">
                       {service.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-slate-600">
+                        <li key={idx} className="flex items-center text-sm text-slate-600 dark:text-white">
                           <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                           {feature}
                         </li>
@@ -249,7 +249,7 @@ const Services = () => {
       </motion.section>
 
       {/* Process Section */}
-      <motion.section variants={itemVariants} className="py-20 bg-white">
+  <motion.section variants={itemVariants} className="py-20 bg-white dark:bg-[#004fa3]">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="text-center mb-16"
@@ -297,11 +297,11 @@ const Services = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-slate-800 to-slate-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#004fa3] to-[#004fa3] dark:bg-[#004fa3] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-2xl font-bold text-white">{process.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{process.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{process.description}</p>
+                <h3 className="text-xl font-bold text-[#004fa3] mb-4 dark:text-white">{process.title}</h3>
+                <p className="text-slate-600 leading-relaxed dark:text-white">{process.description}</p>
               </motion.div>
             ))}
           </div>
@@ -311,7 +311,7 @@ const Services = () => {
       {/* CTA Section */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white"
+        className="py-20 bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white"
       >
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <motion.div
@@ -320,10 +320,10 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
               Ready to Optimize Your Logistics?
             </h2>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed dark:text-white">
               Let our experts design a customized logistics solution that meets your specific business requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
