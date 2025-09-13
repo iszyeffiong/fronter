@@ -37,9 +37,7 @@ const Footer = () => {
           {/* Company Info */}
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-white to-slate-200 rounded-xl flex items-center justify-center text-slate-900 font-bold text-lg">
-                A
-              </div>
+              <img src="/logo2.svg" alt="Abigeo Agency Logo" className="w-10 h-10 rounded-xl object-contain bg-white" />
               <div>
                 <div className="font-bold text-lg leading-tight">
                   Abigeo Agency
@@ -94,7 +92,7 @@ const Footer = () => {
                   <div className="flex items-center space-x-2">
                     <Phone className="w-4 h-4 text-slate-400" />
                     <span className="text-slate-300 text-sm">
-                      {office.phones[0]}
+                      +2348158213085
                     </span>
                   </div>
                 </div>
@@ -121,9 +119,9 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-slate-400" />
+                <Mail className="w-4 h-4 text-slate-400" />
                 <span className="text-slate-300 text-sm">
-                  www.abigeoagencyservicesltd.com
+                  abigeoagencyservltd@gmail.com
                 </span>
               </div>
             </div>

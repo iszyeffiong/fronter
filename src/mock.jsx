@@ -153,7 +153,7 @@ export const projects = [
   {
     id: 1,
     year: "2025",
-    client: "Pointrous Engineering Ltd.",
+    client: "Pollins Green: Pointrous Engineering Ltd.",
     description: "Industrial Pressure Machines Import",
     origin: "China",
     mode: "Sea",
@@ -164,7 +164,7 @@ export const projects = [
   {
     id: 2,
     year: "2024",
-    client: "Emylart Usino Nig Company Ltd",
+    client: "Uche Ephraim: Emylart Usino Nig. Company Ltd",
     description: "Sundried Split Ginger Export",
     destination: "Germany",
     mode: "Sea",
@@ -186,7 +186,7 @@ export const projects = [
   {
     id: 4,
     year: "2023",
-    client: "Iyobta Orbits Limited",
+    client: "Olutayo Adebayo: Iyobta Orbits Limited",
     description: "Furniture Import",
     origin: "Turkey",
     mode: "Sea",
@@ -221,26 +221,26 @@ export const projects = [
 export const testimonials = [
   {
     id: 1,
-    client: "Emylart Usino Nig Company Ltd",
+    client: "Uche Ephraim: Emylart Usino Nig. Company Ltd",
     quote: "Abigeo Agency has been instrumental in our export operations. Their expertise in handling agricultural products and ensuring compliance has made them our preferred logistics partner.",
     name: "Managing Director",
-    company: "Emylart Usino Nig Company Ltd",
+    company: "Uche Ephraim: Emylart Usino Nig. Company Ltd",
     image: "https://images.unsplash.com/photo-1713859326033-f75e04439c3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxjYXJnbyUyMGxvZ2lzdGljc3xlbnwwfHx8fDE3NTc1MDUxODJ8MA&ixlib=rb-4.1.0&q=85"
   },
   {
     id: 2,
-    client: "Pointrous Engineering Ltd.",
+    client: "Pollins Green: Pointrous Engineering Ltd.",
     quote: "The professionalism and efficiency shown in handling our industrial equipment import was exceptional. Abigeo's team ensured smooth clearance and delivery.",
     name: "Operations Manager",
-    company: "Pointrous Engineering Ltd.",
+    company: "Pollins Green: Pointrous Engineering Ltd.",
     image: "https://images.unsplash.com/photo-1605732562742-3023a888e56e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
   },
   {
     id: 3,
-    client: "Iyobta Orbits Limited",
+    client: "Olutayo Adebayo: Iyobta Orbits Limited",
     quote: "Working with Abigeo Agency for our furniture imports has been a game-changer. Their attention to detail and timely execution consistently exceeds our expectations.",
     name: "Procurement Head",
-    company: "Iyobta Orbits Limited",
+    company: "Olutayo Adebayo: Iyobta Orbits Limited",
     image: "https://images.unsplash.com/photo-1655164709639-95035bff7ea8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
   }
 ];

@@ -24,6 +24,102 @@ const iconMap = {
   Target, Award
 };
 
+const heroSlides = [
+  {
+    type: "image",
+    src: "https://images.unsplash.com/photo-1678182451047-196f22a4143e?auto=format&fit=crop&w=1200&q=80",
+    alt: "Shipping containers at port"
+  },
+  {
+    type: "image",
+    src: "https://i.ibb.co/6RSdgCY8/photo-1697733363916-961acc6bacee.jpg",
+    alt: "Cargo ship at sea"
+  },
+  {
+    type: "image",
+    src: "https://i.ibb.co/bjcyYDrC/truck.jpg",
+    alt: "Freight train on tracks"
+  },
+  {
+    type: "video",
+    src: "https://youtu.be/-kBIwbS3ECk",
+    alt: "Cargo shipping video"
+  }
+];
+
+function HeroCarousel() {
+  const [current, setCurrent] = React.useState(0);
+  const timeoutRef = React.useRef(null);
+  const slideCount = heroSlides.length;
+
+  React.useEffect(() => {
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % slideCount);
+    }, 5000);
+    return () => clearTimeout(timeoutRef.current);
+  }, [current, slideCount]);
+
+  return (
+    <div className="w-full h-full relative">
+      {heroSlides.map((slide, idx) => (
+        <div
+          key={idx}
+          className={`absolute inset-0 transition-opacity duration-1000 ${idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+        >
+          {slide.type === "image" ? (
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              className="w-full h-full object-cover opacity-20"
+              draggable="false"
+            />
+          ) : (
+            // Support YouTube links as well as direct MP4s
+            slide.src.includes('youtu') ? (
+              <div className="absolute inset-0 w-full h-full">
+                <iframe
+                  src={`https://www.youtube.com/embed/${slide.src.split('/').pop()}?autoplay=1&mute=1&loop=1&playlist=${slide.src.split('/').pop()}&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0`}
+                  title={slide.alt}
+                  className="w-full h-full object-cover opacity-20 pointer-events-none"
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  frameBorder="0"
+                  tabIndex={-1}
+                />
+              </div>
+            ) : (
+              <video
+                src={slide.src}
+                className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+              />
+            )
+          )}
+        </div>
+      ))}
+      {/* Carousel indicators */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        {heroSlides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`w-3 h-3 rounded-full border-2 border-white bg-white/60 transition-all ${current === idx ? 'bg-[#004fa3] border-[#004fa3]' : ''}`}
+            aria-label={`Go to slide ${idx + 1}`}
+            style={{ outline: 'none' }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const Home = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,11 +162,7 @@ const Home = () => {
       {/* Hero Section */}
   <section className="relative bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1678182451047-196f22a4143e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
-            alt="Shipping containers at port"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <HeroCarousel />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 md:px-6">
