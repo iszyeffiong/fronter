@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
-import { Label } from "../components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import ContactForm from "../components/ContactForm";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
 import { companyInfo, services } from "../mock";
@@ -84,7 +81,7 @@ const Contact = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] text-white py-20">
+      <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -104,7 +101,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
+      <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Form */}
@@ -115,132 +112,13 @@ const Contact = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <Card className="bg-white border-0 shadow-xl">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-slate-900">
-                      Request a Quote
-                    </CardTitle>
-                    <CardDescription className="text-slate-600">
-                      Fill out the form below and we'll get back to you with a detailed quote within 24 hours.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Full Name *</Label>
-                          <Input
-                            id="name"
-                            value={formData.name}
-                            onChange={(e) => handleInputChange("name", e.target.value)}
-                            placeholder="Your full name"
-                            required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email Address *</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) => handleInputChange("email", e.target.value)}
-                            placeholder="your.email@company.com"
-                            required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">Phone Number *</Label>
-                          <Input
-                            id="phone"
-                            value={formData.phone}
-                            onChange={(e) => handleInputChange("phone", e.target.value)}
-                            placeholder="+234 (0) 800 000 0000"
-                            required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="company">Company Name</Label>
-                          <Input
-                            id="company"
-                            value={formData.company}
-                            onChange={(e) => handleInputChange("company", e.target.value)}
-                            placeholder="Your company name"
-                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="service">Service Required *</Label>
-                          <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {services.map(service => (
-                                <SelectItem key={service.id} value={service.title}>
-                                  {service.title}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="urgency">Urgency Level</Label>
-                          <Select value={formData.urgency} onValueChange={(value) => handleInputChange("urgency", value)}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select urgency" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="standard">Standard (5-7 days)</SelectItem>
-                              <SelectItem value="priority">Priority (2-3 days)</SelectItem>
-                              <SelectItem value="urgent">Urgent (24 hours)</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Project Details *</Label>
-                        <Textarea
-                          id="message"
-                          value={formData.message}
-                          onChange={(e) => handleInputChange("message", e.target.value)}
-                          placeholder="Please provide details about your cargo, origins, destinations, timeline, and any special requirements..."
-                          rows={6}
-                          required
-                            className="transition-all duration-200 focus:ring-2 focus:ring-[#004fa3]"
-                        />
-                      </div>
-
-                      <Button
-                        type="submit"
-                        size="lg"
-                        disabled={isSubmitting}
-                        className="w-full bg-[#004fa3] hover:bg-[#003570] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
-                            Submitting...
-                          </>
-                        ) : (
-                          <>
-                            Send Quote Request
-                            <Send className="ml-2 w-5 h-5" />
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
+                <ContactForm
+                  services={services}
+                  onSubmit={handleSubmit}
+                  isSubmitting={isSubmitting}
+                  formData={formData}
+                  setFormData={setFormData}
+                />
               </motion.div>
             </div>
 
