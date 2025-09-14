@@ -160,15 +160,15 @@ const Home = () => {
       className="overflow-hidden"
     >
       {/* Hero Section */}
-  <section className="relative bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0">
+  <section id="hero" className="relative bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
           <HeroCarousel />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 md:px-6">
+        {/* Overlay moved below, so it does not cover the buttons */}
+  <div className="relative max-w-7xl mx-auto px-4 md:px-6 z-30">
           <motion.div
             variants={heroVariants}
-            className="max-w-4xl mx-auto text-center space-y-8"
+            className="max-w-4xl mx-auto text-center space-y-8 relative z-30"
           >
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -203,17 +203,20 @@ const Home = () => {
             </motion.p>
             
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center z-30 relative"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Button
                 asChild
-                size="lg" 
+                size="lg"
                 className="bg-white text-[#004fa3] hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
+                onClick={() => {
+                  localStorage.setItem("openQuoteTab", "true");
+                }}
               >
-                <Link to="/contact">
+                <Link to="/contact#hero">
                   Get Quote Now
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
@@ -230,6 +233,10 @@ const Home = () => {
               </Button>
             </motion.div>
           </motion.div>
+        </div>
+        {/* Overlay moved here, below the buttons and content, so buttons are always on top */}
+        <div className="absolute inset-0 pointer-events-none z-10">
+          <div className="w-full h-full bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
 
         {/* Floating Elements */}
@@ -557,8 +564,11 @@ const Home = () => {
                 asChild
                 size="lg"
                 className="bg-white text-slate-900 hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
+                onClick={() => {
+                  localStorage.setItem("openQuoteTab", "true");
+                }}
               >
-                <Link to="/contact">
+                <Link to="/contact#hero">
                   Get Free Quote
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>

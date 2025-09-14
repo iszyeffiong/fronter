@@ -8,6 +8,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 // Components
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Home from "./pages/Home";
@@ -21,6 +22,7 @@ function App() {
     <ThemeProvider>
       <div className="App min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
         <BrowserRouter>
+          <ScrollToTop />
           <Navigation />
           <AnimatePresence mode="wait">
             <Routes>

@@ -48,7 +48,7 @@ const Projects = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-  <section className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20">
+  <section id="hero" className="bg-gradient-to-br from-[#004fa3] via-[#004fa3] to-[#004fa3] dark:from-[#004fa3] dark:via-[#004fa3] dark:to-[#004fa3] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -299,7 +299,7 @@ const Projects = () => {
                 size="lg"
                 className="bg-white text-slate-900 hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
               >
-                <Link to="/contact">
+                <Link to="/contact#hero">
                   Start Your Project
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
@@ -310,7 +310,7 @@ const Projects = () => {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
               >
-                <Link to="/services">
+                <Link to="/services#hero">
                   View Services
                 </Link>
               </Button>
