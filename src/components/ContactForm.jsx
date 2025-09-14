@@ -61,8 +61,10 @@ const initialQuoteData = {
   comments: ""
 };
 
-const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData }) => {
-  const [formType, setFormType] = useState("");
+const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, formType: externalFormType, setFormType: setExternalFormType }) => {
+  const [internalFormType, setInternalFormType] = useState("");
+  const formType = typeof externalFormType === "string" ? externalFormType : internalFormType;
+  const setFormType = setExternalFormType || setInternalFormType;
   const [step, setStep] = useState(0);
   const [quoteData, setQuoteData] = useState(() => {
     const saved = localStorage.getItem("quoteForm");

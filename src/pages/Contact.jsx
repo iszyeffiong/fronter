@@ -9,6 +9,14 @@ import { useToast } from "../hooks/use-toast";
 import { companyInfo, services } from "../mock";
 
 const Contact = () => {
+  // Check if we should open the quote tab
+  const [formType, setFormType] = useState(() => {
+    if (typeof window !== "undefined" && localStorage.getItem("openQuoteTab") === "true") {
+      localStorage.removeItem("openQuoteTab");
+      return "quote";
+    }
+    return "";
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -118,6 +126,8 @@ const Contact = () => {
                   isSubmitting={isSubmitting}
                   formData={formData}
                   setFormData={setFormData}
+                  formType={formType}
+                  setFormType={setFormType}
                 />
               </motion.div>
             </div>

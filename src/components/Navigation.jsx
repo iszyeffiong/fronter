@@ -126,7 +126,10 @@ const Navigation = () => {
               >
                 <Link
                   to="/contact"
-                  className="bg-[#004fa3] text-white px-6 py-2 rounded-lg font-medium hover:bg-lime-600 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="bg-[#004fa3] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#003570] transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                  onClick={() => {
+                    localStorage.setItem("openQuoteTab", "true");
+                  }}
                 >
                   Get Quote
                 </Link>
@@ -193,7 +196,10 @@ const Navigation = () => {
                 >
                   <Link
                     to="/contact"
-                    className="block w-full bg-[#a7cf3a] text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-lime-600 transition-colors"
+                    className="block w-full bg-[#004fa3] text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-[#003570] transition-colors"
+                    onClick={() => {
+                      localStorage.setItem("openQuoteTab", "true");
+                    }}
                   >
                     Get Quote
                   </Link>
