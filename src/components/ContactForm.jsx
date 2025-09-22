@@ -63,9 +63,18 @@ const initialQuoteData = {
 };
 
 const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, formType: externalFormType, setFormType: setExternalFormType }) => {
-  const [internalFormType, setInternalFormType] = useState("");
-  const formType = typeof externalFormType === "string" ? externalFormType : internalFormType;
-  const setFormType = setExternalFormType || setInternalFormType;
+  // default to "enquiry" so the Enquiries button is active on initial load.
+  // If parent supplies formType (externalFormType) we'll sync to it.
+  const [internalFormType, setInternalFormType] = useState(
+    typeof externalFormType === "string" && externalFormType ? externalFormType : "enquiry"
+  );
+  useEffect(() => {
+    if (typeof externalFormType === "string" && externalFormType) {
+      setInternalFormType(externalFormType);
+    }
+  }, [externalFormType]);
+  const formType = typeof externalFormType === "string" && externalFormType ? externalFormType : internalFormType;
+  const setFormType = typeof setExternalFormType === "function" ? setExternalFormType : setInternalFormType;
   const [step, setStep] = useState(0);
   const [quoteData, setQuoteData] = useState(() => {
     const saved = localStorage.getItem("quoteForm");
@@ -321,20 +330,20 @@ const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, 
             <div className="inline-flex rounded-md bg-slate-100 p-1">
               <button
                 type="button"
-                onClick={() => setFormType('enquiry')}
-                aria-pressed={formType === 'enquiry'}
+                onClick={() => setFormType("enquiry")}
+                aria-pressed={formType === "enquiry"}
                 aria-label="Enquiry"
-                className={`flex items-center px-3 py-2 rounded ${formType === 'enquiry' ? 'bg-[#004fa3] text-white shadow' : 'text-slate-600 hover:bg-slate-50'}`}
+                className={`flex items-center px-3 py-2 rounded ${formType === "enquiry" ? "bg-[#004fa3] text-white shadow" : "bg-white text-slate-600 hover:bg-slate-50"}`}
               >
                 <Mail className="w-4 h-4" />
                 <span className="ml-2">Enquiries</span>
               </button>
               <button
                 type="button"
-                onClick={() => setFormType('quote')}
-                aria-pressed={formType === 'quote'}
+                onClick={() => setFormType("quote")}
+                aria-pressed={formType === "quote"}
                 aria-label="Quote"
-                className={`flex items-center px-3 py-2 rounded ${formType === 'quote' ? 'bg-[#004fa3] text-white shadow' : 'text-slate-600 hover:bg-slate-50'}`}
+                className={`flex items-center px-3 py-2 rounded ${formType === "quote" ? "bg-[#004fa3] text-white shadow" : "bg-white text-slate-600 hover:bg-slate-50"}`}
               >
                 <Clipboard className="w-4 h-4" />
                 <span className="ml-2">Request a Quote</span>
