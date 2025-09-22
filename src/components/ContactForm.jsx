@@ -6,6 +6,7 @@ import { Label } from "../components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
 import { Send } from "lucide-react";
+import { Mail, Clipboard } from "lucide-react";
 
 // Multi-step quote form fields and steps
 const steps = [
@@ -70,6 +71,7 @@ const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, 
     const saved = localStorage.getItem("quoteForm");
     return saved ? JSON.parse(saved) : initialQuoteData;
   });
+  const [sendingQuote, setSendingQuote] = useState(false);
 
   useEffect(() => {
     if (formType === "quote") {
@@ -315,26 +317,29 @@ const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, 
     <Card className="bg-white border-0 shadow-xl">
       <CardHeader>
         <div className="flex items-center gap-3">
-          <CardTitle className="text-2xl text-slate-900">
-            {formType === "quote" ? "Request a Quote" : "Enquiries"}
-          </CardTitle>
           <div className="flex gap-2">
-            <Button
-              type="button"
-              className={`px-4 ${formType === "enquiry" ? "bg-[#004fa3] text-white" : "bg-white text-[#004fa3] border border-[#004fa3]"}`}
-              onClick={() => setFormType("enquiry")}
-              disabled={formType === "enquiry"}
-            >
-              Enquiries
-            </Button>
-            <Button
-              type="button"
-              className={`px-4 ${formType === "quote" ? "bg-[#004fa3] text-white" : "bg-white text-[#004fa3] border border-[#004fa3]"}`}
-              onClick={() => setFormType("quote")}
-              disabled={formType === "quote"}
-            >
-              Request a Quote
-            </Button>
+            <div className="inline-flex rounded-md bg-slate-100 p-1">
+              <button
+                type="button"
+                onClick={() => setFormType('enquiry')}
+                aria-pressed={formType === 'enquiry'}
+                aria-label="Enquiry"
+                className={`flex items-center px-3 py-2 rounded ${formType === 'enquiry' ? 'bg-[#004fa3] text-white shadow' : 'text-slate-600 hover:bg-slate-50'}`}
+              >
+                <Mail className="w-4 h-4" />
+                <span className="ml-2">Enquiries</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormType('quote')}
+                aria-pressed={formType === 'quote'}
+                aria-label="Quote"
+                className={`flex items-center px-3 py-2 rounded ${formType === 'quote' ? 'bg-[#004fa3] text-white shadow' : 'text-slate-600 hover:bg-slate-50'}`}
+              >
+                <Clipboard className="w-4 h-4" />
+                <span className="ml-2">Request a Quote</span>
+              </button>
+            </div>
           </div>
         </div>
         <CardDescription className="text-slate-600 mt-2">
@@ -357,14 +362,45 @@ const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, 
                 Step {step + 1} of {steps.length}: {steps[step]}
               </div>
             </div>
-            <form className="space-y-6" onSubmit={e => { e.preventDefault(); }}>
+            <form
+              className="space-y-6"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                if (typeof onSubmit !== "function") return;
+                try {
+                  setSendingQuote(true);
+                  // support onSubmit returning a promise (e.g. sending email)
+                  await onSubmit(quoteData);
+                  // clear local state and storage on success
+                  setQuoteData(initialQuoteData);
+                  localStorage.removeItem("quoteForm");
+                  setStep(0);
+                  // close the quote tab if using internal formType
+                  try { setFormType(""); } catch (err) { /* noop if parent controls formType */ }
+                } catch (err) {
+                  // preserve data on failure; parent should surface errors
+                  console.error("Quote submit failed:", err);
+                } finally {
+                  setSendingQuote(false);
+                }
+              }}
+            >
               {renderQuoteStep()}
               <div className="flex justify-between mt-6">
                 <Button type="button" onClick={handleBack} disabled={step === 0} className="bg-gray-200 text-slate-700 hover:bg-gray-300">Back</Button>
                 {step < steps.length - 1 ? (
                   <Button type="button" onClick={handleNext} className="bg-[#004fa3] text-white" disabled={!isStepValid()}>Next</Button>
                 ) : (
-                  <Button type="submit" className="bg-[#004fa3] text-white" disabled={!isStepValid()}>Submit</Button>
+                  <Button type="submit" className="bg-[#004fa3] text-white" disabled={!isStepValid() || sendingQuote}>
+                    {sendingQuote ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                        Submitting...
+                      </>
+                    ) : (
+                      "Submit"
+                    )}
+                  </Button>
                 )}
               </div>
             </form>

@@ -7,8 +7,30 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../co
 import { Badge } from "../components/ui/badge";
 import { useToast } from "../hooks/use-toast";
 import { companyInfo, services } from "../mock";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  // EmailJS IDs from env (Vite uses import.meta.env)
+  const SERVICE_ID =
+    import.meta.env.VITE_EMAILJS_SERVICE_ID || import.meta.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID_ENQUIRY =
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ENQUIRY ||
+    import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const TEMPLATE_ID_QUOTE =
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID_QUOTE ||
+    import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY =
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY || import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+  // Initialize EmailJS in browser
+  if (typeof window !== "undefined" && PUBLIC_KEY) {
+    try {
+      emailjs.init(PUBLIC_KEY);
+    } catch (e) {
+      /* ignore init error; send can still accept key */
+    }
+  }
+
   // Check if we should open the quote tab
   const [formType, setFormType] = useState(() => {
     if (typeof window !== "undefined" && localStorage.getItem("openQuoteTab") === "true") {
@@ -36,30 +58,76 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (payload) => {
+    // handle either: (A) event from enquiry form or (B) quoteData object from quote form
+    // If payload is an event, preventDefault and send enquiry using formData; otherwise send payload as quote
+    let templateParams = null;
+    if (payload && typeof payload.preventDefault === "function") {
+      payload.preventDefault();
+      templateParams = {
+        type: "enquiry",
+        ...formData
+      };
+    } else if (payload && typeof payload === "object") {
+      templateParams = {
+        type: "quote",
+        ...payload
+      };
+    } else {
+      return;
+    }
+
+    if (!SERVICE_ID || !TEMPLATE_ID_ENQUIRY || !TEMPLATE_ID_QUOTE || !PUBLIC_KEY) {
+      toast({ title: "EmailJS not configured", description: "Missing EmailJS keys in environment." });
+      return;
+    }
+
+    // normalize arrays for template (comma-separated)
+    if (Array.isArray(templateParams.logisticsServices)) {
+      templateParams.logisticsServices = templateParams.logisticsServices.join(", ");
+    }
+
     setIsSubmitting(true);
+    try {
+      const templateId =
+        templateParams.type === "quote" ? TEMPLATE_ID_QUOTE : TEMPLATE_ID_ENQUIRY;
+      await emailjs.send(SERVICE_ID, templateId, templateParams);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+      toast({
+        title: templateParams.type === "quote" ? "Quote Request Submitted!" : "Enquiry Sent!",
+        description: templateParams.type === "quote"
+          ? "We'll get back to you within 24 hours with a detailed quote."
+          : "We'll respond to your enquiry shortly."
+      });
 
-    toast({
-      title: "Quote Request Submitted!",
-      description: "We'll get back to you within 24 hours with a detailed quote.",
-    });
+      // Reset enquiry form state if this was an enquiry
+      if (templateParams.type === "enquiry") {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: "",
+          urgency: "standard"
+        });
+      }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: "",
-      urgency: "standard"
-    });
-
-    setIsSubmitting(false);
+      // Clear any persisted quote draft
+      if (templateParams.type === "quote") {
+        localStorage.removeItem("quoteForm");
+        // close the quote tab
+        setFormType("");
+      }
+    } catch (err) {
+      console.error("EmailJS send error:", err);
+      toast({
+        title: "Send failed",
+        description: "There was a problem sending your message. Please try again later."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
