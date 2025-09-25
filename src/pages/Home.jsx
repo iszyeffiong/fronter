@@ -287,14 +287,13 @@ const Home = () => {
               return (
                 <motion.div
                   key={stat.id}
-                  className="text-center group"
+                  className="text-center"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-600 rounded-2xl flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-600 rounded-2xl flex items-center justify-center transition-all duration-300">
                     <IconComponent className="w-8 h-8 text-slate-700 dark:text-slate-200" />
                   </div>
                   <div className="text-3xl md:text-4xl font-bold text-[#004fa3] dark:text-slate-100 mb-2">
@@ -342,49 +341,49 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden relative">
-                    <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute bottom-4 left-4">
-                        <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                          <IconComponent className="w-6 h-6 text-white" />
+                  <Link to={`/services#${service.slug}`} className="block cursor-pointer">
+                    <Card className="border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden relative hover:shadow-xl transition-shadow duration-300">
+                      <div className="relative h-48 overflow-hidden">
+                        <img 
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute bottom-4 left-4">
+                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                            <IconComponent className="w-6 h-6 text-white" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <CardHeader className="space-y-4">
-                      <CardTitle className="text-xl text-[#004fa3] dark:text-slate-100 group-hover:text-[#004fa3] dark:group-hover:text-slate-200 transition-colors">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                        {service.description}
-                      </CardDescription>
-                      <ul className="space-y-2">
-                        {service.features.slice(0, 3).map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-slate-600 dark:text-slate-300">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                    <div className="mt-6 flex justify-end">
-                      <Link to={`/services#${service.slug}`}>
-  <button
-    className="mt-auto px-4 py-2 rounded bg-[#004fa3] text-white font-medium shadow hover:bg-[#003366] transition w-full"
-    type="button"
-  >
-    Read More
-  </button>
-</Link>
-                    </div>
-                  </Card>
+                      <CardHeader className="space-y-4">
+                        <CardTitle className="text-xl text-[#004fa3] dark:text-slate-100">
+                          {service.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                          {service.description}
+                        </CardDescription>
+                        <ul className="space-y-2">
+                          {service.features.slice(0, 3).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-slate-600 dark:text-slate-300">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <div className="mt-6 flex justify-end">
+                        <button
+                          className="mt-auto px-4 py-2 rounded bg-[#004fa3] text-white font-medium shadow hover:bg-[#003366] transition w-full"
+                          type="button"
+                        >
+                          Read More
+                        </button>
+                      </div>
+                    </Card>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -431,12 +430,12 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden">
+                <Card className="border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden">
                   <div className="relative h-40 overflow-hidden">
                     <img 
                       src={project.image}
                       alt={project.description}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute top-4 left-4 flex gap-2">

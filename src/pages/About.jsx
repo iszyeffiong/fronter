@@ -143,7 +143,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="h-full bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="h-full bg-white border-0 shadow-lg">
                 <CardHeader>
                   <div className="w-16 h-16 flex items-center justify-center mb-4">
                     <Target className="w-8 h-8 text-[#004fa3]" />
@@ -164,7 +164,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Card className="h-full bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="h-full bg-white border-0 shadow-lg">
                 <CardHeader>
                   <div className="w-16 h-16 flex items-center justify-center mb-4">
                     <Globe className="w-8 h-8 text-[#004fa3]" />
@@ -211,9 +211,9 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white">
+                  <Card className="h-full border-0 shadow-lg bg-white">
                     <CardHeader className="text-center">
-                      <div className="w-16 h-16 mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 mx-auto flex items-center justify-center mb-4">
                         <IconComponent className="w-8 h-8 text-[#004fa3]" />
                       </div>
                       <CardTitle className="text-xl text-[#004fa3]">
@@ -262,10 +262,10 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white">
+                  <Card className="h-full border-0 shadow-lg bg-white">
                     <CardHeader>
                       <div className="flex items-center space-x-4">
-                        <div className="w-14 h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-14 h-14 flex items-center justify-center">
                           <IconComponent className="w-7 h-7 text-[#004fa3]" />
                         </div>
                         <CardTitle className="text-xl text-[#004fa3]">
@@ -313,7 +313,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Card className="h-full bg-white border-0 shadow-lg">
                   <CardHeader>
                     <Badge className="w-fit bg-slate-100 text-slate-700">
                       {office.type}

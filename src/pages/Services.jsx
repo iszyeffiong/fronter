@@ -163,9 +163,9 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3]">
+                <Card className="h-full border-0 shadow-lg bg-white dark:bg-[#004fa3]">
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#004fa3] group-hover:text-[#004fa3] transition-colors dark:text-white">
+                    <CardTitle className="text-xl text-[#004fa3] dark:text-white">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="text-slate-600 dark:text-white">
@@ -238,7 +238,7 @@ const Services = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#004fa3] to-[#004fa3] dark:bg-[#004fa3] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#004fa3] to-[#004fa3] dark:bg-[#004fa3] rounded-2xl flex items-center justify-center mb-6">
                   <span className="text-2xl font-bold text-white">{process.step}</span>
                 </div>
                 <h3 className="text-xl font-bold text-[#004fa3] mb-4 dark:text-white">{process.title}</h3>
@@ -271,7 +271,7 @@ const Services = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-slate-900 hover:bg-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
+                className="bg-white text-slate-900 text-lg px-8 py-6"
               >
                 <Link to="/contact">
                   Request Quote
@@ -282,7 +282,7 @@ const Services = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg px-8 py-6"
+                className="border-white text-white text-lg px-8 py-6"
               >
                 <Link to="/projects">
                   View Projects
