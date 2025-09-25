@@ -122,7 +122,7 @@ const Footer = () => {
                   <div className="flex items-center space-x-2">
                     <Phone className="w-4 h-4 text-slate-400" />
                     <span className="text-slate-300 text-sm">
-                      +2348158213085 | +2348037994948
+                      {office.phones.join(' | ')}
                     </span>
                   </div>
                 </div>
