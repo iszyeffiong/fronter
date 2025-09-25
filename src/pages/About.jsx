@@ -78,6 +78,9 @@ const About = () => {
                   As a Licensed Customs Agent registered and the Council for the Regulation of Freight Forwarding in Nigeria (CRFFN), we provide comprehensive logistics solutions spanning the entire value chain.
                 </p>
                 <p>
+                  We are also an active member of the Port Harcourt Chamber of Commerce, Industry, Mines & Agriculture (PHCCIMA), underscoring our dedication to upholding industry best practices.
+                </p>
+                <p>
                   Our management comprises seasoned professionals and retired customs officers with extensive industry experience, bringing deep industry knowledge and proven track record in transaction management.
                 </p>
               </div>
