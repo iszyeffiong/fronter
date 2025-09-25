@@ -43,7 +43,7 @@ const Navigation = () => {
             </div>
           </div>
           <div className="hidden md:block text-slate-300">
-            Licensed Customs Agent | CAC & CRFFN Registered
+            Licensed Customs Agent | CRFFN Registered
           </div>
         </div>
       </motion.div>

@@ -96,3 +96,17 @@ code {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* Remove blue focus/hover ring from all elements except icons */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Only show blue ring on icon buttons (example: add .icon-btn class to your icon buttons) */
+.icon-btn:focus {
+  outline: 2px solid #004fa3 !important;
+  box-shadow: 0 0 0 2px #004fa333 !important;
+}
+
+  

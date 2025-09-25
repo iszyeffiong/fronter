@@ -75,7 +75,7 @@ const About = () => {
                   Abigeo Agency Services Ltd is an integrated logistics company with over 13 years of operational excellence in the Nigerian logistics sector. Our comprehensive service portfolio covers the entire logistics value chain from procurement to final delivery.
                 </p>
                 <p>
-                  As a Licensed Customs Agent registered with the Corporate Affairs Commission (CAC) and the Council for the Regulation of Freight Forwarding in Nigeria (CRFFN), we provide comprehensive logistics solutions spanning the entire value chain.
+                  As a Licensed Customs Agent registered and the Council for the Regulation of Freight Forwarding in Nigeria (CRFFN), we provide comprehensive logistics solutions spanning the entire value chain.
                 </p>
                 <p>
                   Our management comprises seasoned professionals and retired customs officers with extensive industry experience, bringing deep industry knowledge and proven track record in transaction management.
@@ -100,7 +100,7 @@ const About = () => {
               </Card>
               <Card className="text-center bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">15+</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">55+</div>
                   <div className="text-slate-600">Major Projects</div>
                 </CardContent>
               </Card>
@@ -112,7 +112,7 @@ const About = () => {
               </Card>
               <Card className="text-center bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">100%</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2 dark:text-white">92%</div>
                   <div className="text-slate-600">Client Satisfaction</div>
                 </CardContent>
               </Card>

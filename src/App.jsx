@@ -9,6 +9,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import SocialFloat from "./components/SocialFloat";
 
 // Pages
 import Home from "./pages/Home";
@@ -33,6 +34,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </AnimatePresence>
+          <SocialFloat />
           <Footer />
           <Toaster />
         </BrowserRouter>

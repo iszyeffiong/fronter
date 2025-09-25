@@ -14,7 +14,7 @@ export const companyInfo = {
       id: 1,
       type: "Head Office",
       city: "Port Harcourt",
-      address: "Close 2, Block 1, Elekahia Housing Estate, Port Harcourt, Rivers State, Nigeria",
+      address: "Close 2, Block 1, Elekahia Housing Estate,\nPort Harcourt, Rivers State, Nigeria",
       phones: ["+234 (0) 803 799 4948", "+234 (0) 815 821 3085"],
       emails: ["abigeoagencyservltd@gmail.com", "info@abigeoagencyservicesltd.com"],
       website: "www.abigeoagencyservicesltd.com"
@@ -73,6 +73,7 @@ export const services = [
   {
     id: 1,
     title: "Ocean Freight Services",
+    slug: "ocean",
     description: "Comprehensive sea transportation solutions for global cargo movement",
     features: [
       "Full Container Load (FCL) and Less Container Load (LCL)",
@@ -86,6 +87,7 @@ export const services = [
   {
     id: 2,
     title: "Air Freight Services",
+    slug: "air",
     description: "Time-critical air cargo solutions with comprehensive handling procedures",
     features: [
       "Express air freight",
@@ -99,6 +101,7 @@ export const services = [
   {
     id: 3,
     title: "Road Freight Services",
+    slug: "road",
     description: "Domestic transportation solutions across Nigeria",
     features: [
       "Interstate cargo movement",
@@ -112,6 +115,7 @@ export const services = [
   {
     id: 4,
     title: "Rail Freight Services",
+    slug: "rail",
     description: "Leveraging Nigeria's developing rail infrastructure for cargo transportation",
     features: [
       "Bulk cargo rail transport",
@@ -124,6 +128,7 @@ export const services = [
   {
     id: 5,
     title: "Customs Clearing Services",
+    slug: "customs",
     description: "Professional customs brokerage with regulatory expertise",
     features: [
       "Import/Export documentation",
@@ -137,6 +142,7 @@ export const services = [
   {
     id: 6,
     title: "Oil and Gas Transport Logistics",
+    slug: "oil",
     description: "Specialized petroleum and energy sector logistics solutions",
     features: [
       "Offshore logistics support",
@@ -153,7 +159,7 @@ export const projects = [
   {
     id: 1,
     year: "2025",
-    client: "Pollins Green: Pointrous Engineering Ltd.",
+    client: "Pollins Green (Operations Manager): Pointrous Engineering Ltd.",
     description: "Industrial Pressure Machines Import",
     origin: "China",
     mode: "Sea",
@@ -164,7 +170,7 @@ export const projects = [
   {
     id: 2,
     year: "2024",
-    client: "Uche Ephraim: Emylart Usino Nig. Company Ltd",
+    client: "Uche Ephraim (MD): Emylart Usino Nig. Company Ltd",
     description: "Sundried Split Ginger Export",
     destination: "Germany",
     mode: "Sea",
@@ -173,6 +179,17 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1713859326033-f75e04439c3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxjYXJnbyUyMGxvZ2lzdGljc3xlbnwwfHx8fDE3NTc1MDUxODJ8MA&ixlib=rb-4.1.0&q=85"
   },
   {
+    id: 4,
+    year: "2023",
+    client: "Olutayo Adebayo (Procurement Lead): Iyobta Orbits Limited",
+    description: "Furniture Import",
+    origin: "Turkey",
+    mode: "Sea",
+    volume: "3x40ft Containers",
+    category: "Furniture",
+    image: "https://images.unsplash.com/photo-1655164709639-95035bff7ea8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
+  },
+   {
     id: 3,
     year: "2024",
     client: "Isoch Global Resources",
@@ -182,17 +199,6 @@ export const projects = [
     volume: "1x20ft & 1x40ft",
     category: "Construction Materials",
     image: "https://images.unsplash.com/photo-1678182451047-196f22a4143e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
-  },
-  {
-    id: 4,
-    year: "2023",
-    client: "Olutayo Adebayo: Iyobta Orbits Limited",
-    description: "Furniture Import",
-    origin: "Turkey",
-    mode: "Sea",
-    volume: "3x40ft Containers",
-    category: "Furniture",
-    image: "https://images.unsplash.com/photo-1655164709639-95035bff7ea8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzaGlwcGluZyUyMGNvbnRhaW5lcnN8ZW58MHx8fHwxNzU3NTA1MTc2fDA&ixlib=rb-4.1.0&q=85"
   },
   {
     id: 5,
@@ -254,7 +260,7 @@ export const stats = [
   },
   {
     id: 2,
-    number: "15+",
+    number: "55+",
     label: "Major Projects Completed",
     icon: "CheckCircle"
   },
@@ -266,7 +272,7 @@ export const stats = [
   },
   {
     id: 4,
-    number: "100%",
+    number: "92%",
     label: "Client Satisfaction Rate",
     icon: "ThumbsUp"
   }

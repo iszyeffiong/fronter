@@ -7,10 +7,44 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { Badge } from "../components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { services } from "../mock";
+import Carousel from "../components/Carousel";
 
 const iconMap = {
   Ship, Plane, Truck, Train, FileText, Fuel
 };
+
+const SERVICES = [
+  {
+    slug: "ocean",
+    title: "Ocean Freight Services",
+    // ...
+  },
+  {
+    slug: "air",
+    title: "Air Freight Services",
+    // ...
+  },
+  {
+    slug: "road",
+    title: "Road Freight Services",
+    // ...
+  },
+  {
+    slug: "rail",
+    title: "Rail Freight Services",
+    // ...
+  },
+  {
+    slug: "customs",
+    title: "Customs Clearing Services",
+    // ...
+  },
+  {
+    slug: "oil",
+    title: "Oil and Gas Transport Logistics",
+    // ...
+  },
+];
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0]);
@@ -61,108 +95,15 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Overview */}
-  <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = iconMap[service.icon];
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <Card 
-                    className={`h-full group cursor-pointer transition-all duration-300 border-0 shadow-lg ${
-                      selectedService.id === service.id 
-                        ? 'ring-2 ring-[#004fa3] shadow-xl -translate-y-2 dark:bg-[#004fa3]' 
-                        : 'hover:shadow-xl hover:-translate-y-2 dark:bg-[#004fa3]'
-                    }`}
-                    onClick={() => setSelectedService(service)}
-                  >
-                    <CardHeader className="space-y-4">
-                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                        selectedService.id === service.id
-                          ? 'bg-[#004fa3] scale-110 dark:bg-[#004fa3]'
-                          : 'bg-gradient-to-br from-[#004fa3] to-[#004fa3] group-hover:scale-110 dark:bg-[#004fa3]'
-                      }`}>
-                        <IconComponent className="w-7 h-7 text-white" />
-                      </div>
-                      <CardTitle className="text-xl text-[#004fa3] group-hover:text-[#004fa3] transition-colors dark:text-white">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-slate-600 mb-4 leading-relaxed dark:text-white">
-                        {service.description}
-                      </CardDescription>
-                      <ul className="space-y-2">
-                        {service.features.slice(0, 2).map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-slate-600 dark:text-white">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+      {/* Carousel Section */}
+      <section className="w-full py-12 bg-white dark:bg-[#004fa3]">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          
+          <div id="service-accordion">
+            <Carousel />
           </div>
         </div>
-      </motion.section>
-
-      {/* Detailed Service View */}
-      <motion.section variants={itemVariants} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedService.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="text-center mb-12">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#004fa3] to-[#004fa3] rounded-2xl flex items-center justify-center mb-6">
-                  {React.createElement(iconMap[selectedService.icon], { className: "w-10 h-10 text-white" })}
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#004fa3] mb-4 dark:text-white">
-                  {selectedService.title}
-                </h2>
-                <p className="text-xl text-slate-600 leading-relaxed dark:text-white">
-                  {selectedService.description}
-                </p>
-              </div>
-
-              <Card className="bg-gradient-to-br from-slate-50 to-white border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-[#004fa3] mb-6 dark:text-white">Service Features</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {selectedService.features.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="flex items-center space-x-3"
-                      >
-                        <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                        <span className="text-slate-700 font-medium dark:text-white">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </motion.section>
+      </section>
 
       {/* Service Categories */}
   <motion.section variants={itemVariants} className="py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#004fa3] dark:to-[#004fa3]">

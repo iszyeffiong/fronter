@@ -55,7 +55,7 @@ const Projects = () => {
             variants={itemVariants}
           >
             <Badge className="mb-6 bg-white/10 text-white border-white/20">
-              15+ Major Projects Completed
+              55+ Major Projects Completed
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 dark:text-white">
               Our Project Portfolio
@@ -246,7 +246,7 @@ const Projects = () => {
                 description: "Recent portfolio"
               },
               {
-                number: "100%",
+                number: "92%",
                 label: "Success Rate",
                 description: "On-time delivery"
               }

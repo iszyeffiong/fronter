@@ -41,6 +41,11 @@ const heroSlides = [
     alt: "Freight train on tracks"
   },
   {
+    type: "image",
+    src: "/hero.png",
+    alt: "Freight train on tracks"
+  },
+  {
     type: "video",
     src: "https://youtu.be/-kBIwbS3ECk",
     alt: "Cargo shipping video"
@@ -176,7 +181,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <Badge className="mb-4 bg-white/10 text-white border-white/20 hover:bg-white/20">
-                Licensed Customs Agent | CAC & CRFFN Registered
+                Licensed Customs Agent | CRFFN Registered
               </Badge>
             </motion.div>
             
@@ -236,7 +241,7 @@ const Home = () => {
         </div>
         {/* Overlay moved here, below the buttons and content, so buttons are always on top */}
         <div className="absolute inset-0 pointer-events-none z-10">
-          <div className="w-full h-full bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="w-full h-full bg-gradient-to-r from-black/40 via-black/20 to-black/10"></div>
         </div>
 
         {/* Floating Elements */}
@@ -337,7 +342,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden">
+                  <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 shadow-lg bg-white dark:bg-[#004fa3] overflow-hidden relative">
                     <div className="relative h-48 overflow-hidden">
                       <img 
                         src={service.image}
@@ -369,6 +374,16 @@ const Home = () => {
                         ))}
                       </ul>
                     </CardContent>
+                    <div className="mt-6 flex justify-end">
+                      <Link to={`/services#${service.slug}`}>
+  <button
+    className="mt-auto px-4 py-2 rounded bg-[#004fa3] text-white font-medium shadow hover:bg-[#003366] transition w-full"
+    type="button"
+  >
+    Read More
+  </button>
+</Link>
+                    </div>
                   </Card>
                 </motion.div>
               );
@@ -382,12 +397,6 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <Button asChild size="lg" className="bg-[#004fa3] hover:bg-[#003366] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <Link to="/services">
-                View All Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
           </motion.div>
         </div>
       </motion.section>
