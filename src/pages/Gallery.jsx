@@ -136,6 +136,70 @@ const Gallery = () => {
       category: "warehouse",
       title: "Heavy Machinery Handling",
       description: "Specialized equipment for oversized cargo operations"
+    },
+     {
+      id: 17,
+      src: "/onsite17.png",
+      alt: "Container operations",
+      category: "ocean",
+      title: "Container Terminal Operations",
+      description: "Advanced container handling and storage facilities"
+    },
+    {
+      id: 18,
+      src: "/onsite18.png",
+      alt: "Air cargo terminal",
+      category: "air",
+      title: "Air Cargo Terminal",
+      description: "Modern air freight processing and handling facilities"
+    },
+    {
+      id: 19,
+      src: "/onsite19.png",
+      alt: "Fleet management",
+      category: "road",
+      title: "Fleet Management Center",
+      description: "Centralized fleet monitoring and dispatch operations"
+    },
+    {
+      id: 20,
+      src: "/onsite20.png",
+      alt: "Railway logistics hub",
+      category: "rail",
+      title: "Railway Logistics Hub",
+      description: "Multi-modal rail transport coordination center"
+    },
+    {
+      id: 21,
+      src: "/onsite21.png",
+      alt: "Cold storage facility",
+      category: "warehouse",
+      title: "Cold Storage Facility",
+      description: "Temperature-controlled storage for perishable goods"
+    },
+    {
+      id: 22,
+      src: "/onsite22.png",
+      alt: "Documentation center",
+      category: "customs",
+      title: "Documentation Center",
+      description: "Comprehensive trade documentation and compliance services"
+    },
+    {
+      id: 23,
+      src: "/onsite23.png",
+      alt: "Heavy machinery transport",
+      category: "warehouse",
+      title: "Heavy Machinery Handling",
+      description: "Specialized equipment for oversized cargo operations"
+    },
+     {
+      id: 24,
+      src: "/onsite24.png",
+      alt: "Heavy machinery transport",
+      category: "warehouse",
+      title: "Heavy Machinery Handling",
+      description: "Specialized equipment for oversized cargo operations"
     }
   ];
 
@@ -212,17 +276,8 @@ const Gallery = () => {
                         alt={image.alt}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                         <ZoomIn className="w-8 h-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-white font-semibold text-lg mb-1">
-                          {image.title}
-                        </h3>
-                        <p className="text-white/80 text-sm">
-                          {image.description}
-                        </p>
                       </div>
                     </div>
                   </Card>
