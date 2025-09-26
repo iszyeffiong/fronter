@@ -224,7 +224,7 @@ const Projects = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               {
-                number: projects.length.toString(),
+                number: "55+",
                 label: "Total Projects",
                 description: "Successfully completed"
               },
@@ -234,7 +234,7 @@ const Projects = () => {
                 description: "Served across"
               },
               {
-                number: years.length.toString(),
+                 number: "13+",
                 label: "Years Active",
                 description: "Recent portfolio"
               },
