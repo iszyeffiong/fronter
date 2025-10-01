@@ -63,6 +63,22 @@ const initialQuoteData = {
 };
 
 const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, formType: externalFormType, setFormType: setExternalFormType }) => {
+  // Ref for the service dropdown
+  const serviceDropdownRef = React.useRef(null);
+
+  // Click outside handler for service dropdown
+  useEffect(() => {
+    if (!formData.showServiceDropdown) return;
+    function handleClickOutside(event) {
+      if (serviceDropdownRef.current && !serviceDropdownRef.current.contains(event.target)) {
+        setFormData(prev => ({ ...prev, showServiceDropdown: false }));
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [formData.showServiceDropdown, setFormData]);
   // default to "enquiry" so the Enquiries button is active on initial load.
   // If parent supplies formType (externalFormType) we'll sync to it.
   const [internalFormType, setInternalFormType] = useState(
@@ -468,7 +484,7 @@ const ContactForm = ({ services, onSubmit, isSubmitting, formData, setFormData, 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label>Service Required *</Label>
-                <div className="relative">
+                <div className="relative" ref={serviceDropdownRef}>
                   <button
                     type="button"
                     className="w-full border rounded px-3 py-2 text-left bg-white focus:outline-none focus:ring-2 focus:ring-[#004fa3]"

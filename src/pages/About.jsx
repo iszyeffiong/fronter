@@ -134,7 +134,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004fa3] mb-6">
               Our Vision & Mission
             </h2>
           </motion.div>
