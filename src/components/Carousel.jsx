@@ -28,7 +28,7 @@ const SERVICES = [
         title: "Air Freight Services",
         icon: <Plane className="w-6 h-6 text-white" />,
         description: [
-            "In line with the importance attached to air freight and time pressures, we plan a comprehensive air freight service, fashioned to meet our client's requirements, with our strategic operational handling procedures hinged on high quality services.",
+            "In line with the importance attached to air freight and time pressures, we undertake a comprehensive air freight service, fashioned to meet our client's requirements, with our strategic operational handling procedures hinged on high quality services.",
             "Our team follow through on each shipment to assure our clients & ascertain real time status report on all import & export of air freight shipments at all times.",
             "Our air freight services includes:",
         ],
@@ -61,7 +61,7 @@ const SERVICES = [
             "Transportation Of Less Truck Load (LTL), Full Truck Load (FTL) & Bulk Cargo.",
             "Haulage Of All Types Of Cargo.",
             "Contract Logistics, Procurement & Distribution.",
-            "Tracing & Tracking & Distribution Of Cargo.",
+            "Tracing, Tracking And Distribution Of Cargos",
             "Special Transportation Of Household Goods & Personal Effects.",
             "Customs Bonded Transportation.",
             "And Other Value Added Services.",
@@ -86,7 +86,7 @@ const SERVICES = [
         title: "Customs Clearing Services",
         icon: <FileText className="w-6 h-6 text-white" />,
         description:
-            "In line with global best demands for timely delivery of cargo, increasing responsibility is placed on customs brokers to provide expected customs clearing services. AASL is known for her commitment to rendering quality & prompt cargo management & customs clearance services with her good professional relationship with customs and other relevant government agencies, when it comes to negotiating difficult consignments & dealing with the challenges of bureaucratic procedures. Irrespective of the prompt arrival of a consignment to the port of destination, complex customs requirements can result in indefinite delays, costing huge storage & demurrage charges to consignee. Abigeo Agency Services Ltd customs agents are well trained to understand complex customs procedures of each specific area of operation. Our team of customs agents takes full responsibility to ensure that correct documentation is prepared well in advance of all import & export deadlines in order to avoid expensive & time consuming delays. Our customs agent services are:",
+            "In line with global best demands for timely delivery of cargo, increasing responsibility is placed on customs brokers to provide expected customs clearing services. AASL is known for her commitment to rendering quality and prompt cargo management, custom clearance service with a high professional public relations with customs and other relevant government agencies, when it comes to negotiating difficult consignments & dealing with the challenges of bureaucratic procedures. Irrespective of the prompt arrival of a consignment to the port of destination, complex customs requirements can result in indefinite delays, costing huge storage & demurrage charges to consignee. Abigeo Agency Services Ltd customs agents are well trained to understand complex customs procedures of each specific area of operation. Our team of customs agents takes full responsibility to ensure that correct documentation is prepared well in advance of all import & export deadlines in order to avoid expensive & time consuming delays. Our customs agent services are:",
         checklist: [
             "Import And Export Customs Clearing Services.",
             "Classification Of Goods And HS Codes.",
