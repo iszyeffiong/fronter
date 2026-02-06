@@ -23,7 +23,7 @@ export const companyInfo = {
       id: 2,
       type: "Lagos Office",
       city: "Lagos",
-      address: "1 Oyekan Street, Apapa, Lagos State, Nigeria",
+      address: "31 Kofo Abayomi Avenue, Apapa, Lagos State, Nigeria",
       phones: ["+234 (0) 809 706 5559"],
       emails: ["info@abigeoagencyservicesltd.com"]
     }
